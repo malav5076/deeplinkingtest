@@ -3,40 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My HTML Page</title>
+    <title>Custom URI Scheme</title>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
-    </header>
+    <p>Click the button to open the custom URI:</p>
+    <button id="openCustomUri">Open Custom URI</button>
 
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+    <script>
+        document.getElementById("openCustomUri").addEventListener("click", function() {
+            // Define the custom URI scheme
+            var customUri = "com.medpresso.testzapp://crnclexrn/sharequestion?qid=20";
 
-    <main>
-        <section>
-            <h2>About Us</h2>
-            <p>This is the about us section of the website.</p>
-        </section>
-
-        <section>
-            <h2>Services</h2>
-            <ul>
-                <li>Service 1</li>
-                <li>Service 2</li>
-                <li>Service 3</li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 My Website</p>
-    </footer>
+            // Try to open the custom URI
+            window.location.href = customUri;
+            
+            // If the custom URI is not supported, you can provide a fallback
+            setTimeout(function() {
+                window.location.href = "https://skyscape.com"; // Fallback URL
+            }, 1000); // 1 second delay
+        });
+    </script>
 </body>
 </html>
