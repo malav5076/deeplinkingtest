@@ -10,13 +10,13 @@
     <button id="openCustomUri">Open Custom URI</button>
 
     <script>
-    
+            console.log("before changing");
             // Define the custom URI scheme
             var customUri = "com.medpresso.testzapp://crnclexrn/sharequestion?qid=20";
 
             // Try to open the custom URI
             window.location.href = customUri;
-            
+            console.log("after changing");
             // If the custom URI is not supported, you can provide a fallback
 
     </script>
