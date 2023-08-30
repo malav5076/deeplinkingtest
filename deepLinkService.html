@@ -10,15 +10,19 @@
     <button id="openCustomUri">Open Custom URI</button>
 
     <script>
-            console.log("before changing");
-            // Define the custom URI scheme
-            var customUri = "com.medpresso.testzapp://crnclexrn/sharequestion?qid=20";
+             
+    var customUri = "com.medpresso.testzapp://crnclexrn/sharequestion?qid=20";
+    var alternateUrl = "https://play.google.com/store/apps/details?id=com.medpresso.testzapp.crnclex_rn";
 
-            // Try to open the custom URI
+    function handleUriOpening() {
+        try {
             window.location.href = customUri;
-            console.log("after changing");
-            // If the custom URI is not supported, you can provide a fallback
-
+        } catch (error) {
+            console.error("Error opening custom URI:", error);
+            window.location.href = alternateUrl;
+        }
+    }
+    handleUriOpening();
     </script>
 </body>
 </html>
