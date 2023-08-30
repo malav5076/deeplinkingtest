@@ -16,10 +16,12 @@
 
     function handleUriOpening() {
         try {
+            console.log("inside try block");
             window.location.href = customUri;
         } catch (error) {
-            console.error("Error opening custom URI:", error);
             window.location.href = alternateUrl;
+            console.log("inside catch block")
+            console.error("Error opening custom URI:", error);
         }
     }
     handleUriOpening();
