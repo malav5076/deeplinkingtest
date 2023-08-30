@@ -19,9 +19,8 @@
             window.location.href = customUri;
             setTimeout(function() {
                 window.location.href = alternateUrl;
-            }, 3000);
-            console.log("after timeout")
-            console.error("Error opening custom URI:", error);
+            }, 10000);
+            console.log("after timeout");
         }
         
     handleUriOpening();
