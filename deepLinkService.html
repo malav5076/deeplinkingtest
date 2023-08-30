@@ -14,13 +14,28 @@
     var customUri = "com.medpresso.testzapp://crnclexrn/sharequestion?qid=20";
     var alternateUrl = "https://play.google.com/store/apps/details?id=com.medpresso.testzapp.crnclex_rn";
 
-    function handleUriOpening() {
-            console.log("before process");
-            window.location.href = customUri;
-            console.log("after process");
+function openCustomScheme() {
+    console.log("inside openCustomeScheme");
+    window.location.href = customUri;
+    console.log("inside after openCustomeScheme")
+}
+
+function redirectToPlayStore() {
+    console.log("inside redirect to play store")
+    window.location.href = alternateUrl;
+    console.log("inside redirect  to play store");
+}
+    openCustomScheme();
+
+    setTimeout(function() {
+        if (window.location.href.indexOf('com.medpresso.testzapp') === 0) {
+            console.log("inside true condition");
+            redirectToPlayStore();
         }
-        
-    handleUriOpening();
+    }, 10000);
+
+    console.log("after timeout and redirection");
+
     </script>
 </body>
 </html>
