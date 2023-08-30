@@ -28,10 +28,10 @@ function redirectToPlayStore() {
     openCustomScheme();
 
     setTimeout(function() {
-        if (window.location.href === customUri) {
+        
             console.log(window.location.href+"inside open true condition");
             redirectToPlayStore();
-        }
+        
     }, 10000);
 
     console.log("after timeout and redirection");
