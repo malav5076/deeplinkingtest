@@ -15,25 +15,20 @@
     var alternateUrl = "https://play.google.com/store/apps/details?id=com.medpresso.testzapp.crnclex_rn";
 
 function openCustomScheme() {
-    console.log("inside openCustomeScheme");
-    window.location.href = customUri;
+    window.location.replace(customUri)
     console.log("inside after openCustomeScheme")
     console.log(window.location.href+"inside open custom scheme");
 
 }
 
 function redirectToPlayStore() {
-    console.log("inside redirect to play store")
     console.log(window.location.href+"inside open redirect to play store");
-    window.location.href = alternateUrl;
-    console.log("inside redirect  to play store");
+    window.location.replace(alternateUrl);
 }
     openCustomScheme();
 
     setTimeout(function() {
-        console.log(window.location.href+"inside open timeout function");
         if (window.location.href === customUri) {
-            console.log("inside true condition");
             console.log(window.location.href+"inside open true condition");
             redirectToPlayStore();
         }
