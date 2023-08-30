@@ -17,10 +17,7 @@
     function handleUriOpening() {
             console.log("before process");
             window.location.href = customUri;
-            setTimeout(function() {
-                window.location.href = alternateUrl;
-            }, 10000);
-            console.log("after timeout");
+            console.log("after process");
         }
         
     handleUriOpening();
